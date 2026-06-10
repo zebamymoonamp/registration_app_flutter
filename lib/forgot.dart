@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_screens/login.dart';
+import 'package:login_screens/service.dart';
 
 class Forgot extends StatefulWidget {
   const Forgot({super.key});
@@ -58,18 +59,19 @@ class _ForgotState extends State<Forgot> {
                   fillColor: Colors.white,
                   filled: true,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
+                       borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),
               SizedBox(height: 40),
+
               SizedBox(
                 height: 60,
                 width: 300,
                 child: ElevatedButton(
                   onPressed: () {
                     if (formkey.currentState!.validate()) {
-                      print("save");
+                      forgotp(emailc.text, context);
                     }
                   },
                   child: Text("Submit", style: TextStyle(fontSize: 20)),

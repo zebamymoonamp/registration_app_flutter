@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_screens/login.dart';
+import 'package:login_screens/service.dart';
 
 class Signup extends StatefulWidget {
  
@@ -61,7 +62,7 @@ class _SignupState extends State<Signup> {
                   if(value == null || value.isEmpty){
                     return "Username is Required";
                 };
-                },
+                },controller: unamec,
                   decoration: InputDecoration(
                     fillColor: Colors.white,
                     filled: true,
@@ -185,7 +186,7 @@ class _SignupState extends State<Signup> {
                   child: ElevatedButton(
                     onPressed: () {
                       if(formkey.currentState!.validate()){
-                        print("save");
+                       Register(unamec.text, emailc.text, Passwordc.text, context);
                       }
                     },
                     child: Text("Sign Up", style: TextStyle(fontSize: 20)),
